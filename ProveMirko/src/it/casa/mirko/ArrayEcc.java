@@ -31,6 +31,8 @@ public class ArrayEcc {
 	}
 
 	public void provaList() {
+		//Creo una Lista di Integer: gli interi non si possono usare con le collection
+		//
 		List<Integer> numeri = new ArrayList<>();
 		numeri.add(1);
 		numeri.add(2);
@@ -40,13 +42,36 @@ public class ArrayEcc {
 		System.out.println(numeri.get(0));
 		System.out.println("\n-----\n");
 		Iterator i = numeri.iterator();
-		System.out.println(i.next());
-		System.out.println(i.next());
-		System.out.println(i.next());
+		while (i.hasNext()) {
+			System.out.println(i.next());
+		}
+
+		System.out.println("..ricarico iterator..");
 		i = numeri.iterator();
-		System.out.println(i.next());
-		System.out.println(i.next());
-		System.out.println(i.next());
+
+		for (Integer integ : numeri) {
+			System.out.println(integ + "   " + i.next());
+		}
+		System.out.println(i.hasNext());
+		System.out.println("\n...uso piu iteratori sull stesso oggetto");
+		Iterator i1 = numeri.iterator();
+		Iterator i2 = numeri.iterator();
+		System.out.println(i1.next());
+		System.out.println(i1.next());
+		//questo iteratore ora ricomincia da capo con l'elemento 0 della lista
+		System.out.println(i2.next());
+		//rimuovo l'ultimo elemento viistato da i1.next()
+		i1.remove();
+		
+		// se ora col seconodo iteratore
+		// dicessi di continuare le visite mi darebbe errore(faun controllo se altri iteratori sono stati modificati.
+		
+		
+		System.out.println("rimosso 10000");
+		
+		System.out.println(i2.next());
+		System.out.println("qui ci arriviamo? Siii");
+		System.out.println(i1.next());
 
 	}
 
@@ -67,6 +92,8 @@ public class ArrayEcc {
 		// view.provaList();
 		// System.out.println(x);
 		view.provaMap();
+		System.out.println("------------------------------");
+		view.provaList();
 	}
 
 }
