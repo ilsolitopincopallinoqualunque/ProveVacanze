@@ -30,8 +30,12 @@ public class ArrayEcc {
 
 	}
 
+	/**
+	 * 
+	 */
 	public void provaList() {
-		//Creo una Lista di Integer: gli interi non si possono usare con le collection
+		// Creo una Lista di Integer: gli interi non si possono usare con le
+		// collection
 		//
 		List<Integer> numeri = new ArrayList<>();
 		numeri.add(1);
@@ -58,18 +62,20 @@ public class ArrayEcc {
 		Iterator i2 = numeri.iterator();
 		System.out.println(i1.next());
 		System.out.println(i1.next());
-		//questo iteratore ora ricomincia da capo con l'elemento 0 della lista
+		// questo iteratore ora ricomincia da capo con l'elemento 0 della lista
 		System.out.println(i2.next());
-		//rimuovo l'ultimo elemento viistato da i1.next()
+		// rimuovo l'ultimo elemento viistato da i1.next()
 		i1.remove();
-		
+
 		// se ora col seconodo iteratore
-		// dicessi di continuare le visite mi darebbe errore(faun controllo se altri iteratori sono stati modificati.
-		
-		
+		// dicessi di continuare le visite mi darebbe errore(fa un controllo se
+		// altri iteratori sono stati modificati.
+
 		System.out.println("rimosso 10000");
+
+		// questo da errore
+		// System.out.println(i2.next());
 		
-		System.out.println(i2.next());
 		System.out.println("qui ci arriviamo? Siii");
 		System.out.println(i1.next());
 
